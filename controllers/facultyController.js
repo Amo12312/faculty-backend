@@ -260,7 +260,7 @@
 //     formData.esicNumber = formData.esicNumber || "";
 
 //     // Generate and hash password from DOB
-//     // SECURITY WARNING: Using DOB as a password is insecure as it’s predictable.
+//     // SECURITY WARNING: Using DOB as a password is insecure as it's predictable.
 //     // Consider requiring a password change on first login (tracked by passwordUpdated).
 //     const initialPassword = generatePasswordFromDOB(formData.dateOfBirth);
 //     if (initialPassword.length < 8) {
@@ -742,8 +742,8 @@
 // };
 // backend/controllers/facultyController.js
 const Faculty = require("../models/faculty");
-const Student = require("../models/Student");
-const Subject = require("../models/Subject");
+const Student = require("../models/student");
+const Subject = require("../models/subject");
 const Attendance = require("../models/Attendance");
 const SalaryRecord = require("../models/SalaryRecord");
 const Counter = require("../models/Counter");
@@ -1002,7 +1002,7 @@ const facultyRegister = async (req, res) => {
     formData.esicNumber = formData.esicNumber || "";
 
     // Generate and hash password from DOB
-    // SECURITY WARNING: Using DOB as a password is insecure as it’s predictable.
+    // SECURITY WARNING: Using DOB as a password is insecure as it's predictable.
     // Consider requiring a password change on first login (tracked by passwordUpdated).
     const initialPassword = generatePasswordFromDOB(formData.dateOfBirth);
     if (initialPassword.length < 8) {
@@ -1429,6 +1429,7 @@ const getLastEmployeeId = async (req, res) => {
     });
   }
 };
+
 const assignCC = async (req, res) => {
   try {
     const { facultyId, academicYear, semester, section, department } = req.body;
